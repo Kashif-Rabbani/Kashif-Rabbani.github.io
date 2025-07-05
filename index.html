@@ -6,746 +6,1408 @@
     <meta content='width=device-width initial-scale=1' name='viewport'>
     <title>Kashif Rabbani</title>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" rel="stylesheet">
     <script crossorigin="anonymous"
-            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           rel="stylesheet"/>
-    <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext'
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
           rel='stylesheet' type='text/css'>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --secondary-color: #0984e3;
+            --text-color: #2d3436;
+            --light-bg: #f5f6fa;
+            --border-color: #dfe6e9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .profile-header {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-image-float {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            float: right;
+            margin: 0 0 1rem 1rem;
+            shape-outside: circle(50%);
+        }
+
+        .profile-content {
+            overflow: hidden;
+        }
+
+        .social-links {
+            margin: 1rem 0 0 0;
+        }
+
+        .social-links .btn {
+            margin: 0.25rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .social-links .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h3, .section h4 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .publication-item {
+            margin-bottom: 0rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: var(--light-bg);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-light {
+            background: white;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-light:hover {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .skills-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-category h5 {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .skills-list {
+            background: var(--light-bg);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .award-item {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .award-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .award-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-description {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .publications-toggle {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .hidden-publications {
+            display: none;
+        }
+
+        .show-more-btn {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 1px solid #dee2e6;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .show-more-btn:hover {
+            background: #e9ecef;
+            color: var(--text-color);
+            border-color: #adb5bd;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .profile-header {
+                padding: 1.5rem;
+            }
+            
+            .profile-image-float {
+                width: 100px;
+                height: 100px;
+                margin: 0 0 1rem 0.8rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Skills Section Styles */
+        .skills-category-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .skills-category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-header h5 {
+            color: var(--text-color);
+            font-weight: 600;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .skill-header i {
+            font-size: 1rem;
+        }
+
+        .skill-header .badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .text-purple {
+            color: #6f42c1 !important;
+        }
+
+        @media (max-width: 768px) {
+            .skills-category-card {
+                padding: 0.8rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .skill-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+            
+            .skill-header .badge {
+                margin-left: 0 !important;
+            }
+        }
+
+        /* Tooltip Styles */
+        .metric-info {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+
+        .metric-info .info-icon {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            margin-left: 0.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .metric-info:hover .info-icon {
+            color: var(--secondary-color);
+        }
+
+        .tooltip-content {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            white-space: pre-line;
+            width: 300px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #2c3e50 transparent transparent transparent;
+        }
+
+        .metric-info:hover .tooltip-content,
+        .metric-info:focus .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .tooltip-content {
+                width: 250px;
+                font-size: 0.8rem;
+                padding: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body class='typora-export'>
-<div class="is-mac" id="write" itemscope itemtype="http://schema.org/Article">
-    <h1><a class="md-header-anchor" name="kashif rabbani image"></a><span itemprop="name">Kashif Rabbani </span><img
-            alt="Kashif Rabbani"
-            id="profile_image" itemprop="image" src="kashif_rabbani_pic.jpeg" style="float: right; max-width:20%"/></h1>
-    <p><span>Semantic Data Engineer (Research Ontologist)</span>,
-        <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Novo Nordisk, Denmark </span></span>
-    </p>
-    <p><span>PhD in Computer Science</span>, from <span itemprop="publisher" itemscope
-                                                        itemtype="http://schema.org/Organization"><span itemprop="name">Aalborg University, Denmark </span></span><br/>
-    </p>
-    <p>
-        <!-- <a  itemprop="url" class="btn btn-light btn-sm" target="_blank" href="https://en.wikipedia.org/wiki/Denmark" role="button" aria-expanded="false"><i class="fas fa-map-marker-alt"> </i> Denmark</a> -->
-        <a aria-expanded="false" class="btn btn-light btn-sm" href="https://twitter.com/chkashifrabbani" itemprop="url"
-           role="button" target="_blank"><i class="fab fa-twitter"> </i> Twitter</a>
-        <a aria-expanded="false" class="btn btn-light btn-sm" href="https://www.linkedin.com/in/kashifrabbani/"
-           itemprop="url"
-           role="button" target="_blank"><i class="fab fa-linkedin-in"> </i> LinkedIn</a>
-        <a aria-expanded="false" class="btn btn-light btn-sm" href="https://github.com/Kashif-Rabbani" itemprop="url"
-           role="button" target="_blank"><i class="fab fa-github"> </i> GitHub</a>
-        <a aria-expanded="false" class="btn btn-light btn-sm"
-           href="https://scholar.google.com/citations?user=ylZLatcAAAAJ"
-           itemprop="url" role="button" target="_blank"><i
-                class="fas fa-graduation-cap"> </i> Google Scholar</a>
-    </p>
-    <hr/>
-    <p style="text-align:justify;">
+<div class="container">
+    <div class="profile-header">
+        <div class="profile-content">
+            <img alt="Kashif Rabbani" class="profile-image-float" src="kashif-rabbani.jpg"/>
+            <h1 class="h2 mb-2">Kashif Rabbani</h1>
+            <p class="mb-1 fw-medium">Semantic Data Engineer (Research Ontologist)</p>
+            <p class="text-muted mb-2">Novo Nordisk, Denmark</p>
+            <!-- <p class="mb-3">PhD in Computer Science from Aalborg University, Denmark</p> -->
+            <div class="mb-3 text-justify">
+                <p class="text-justify mb-3">
+                    Graph-centric data engineer with a PhD in Computer Science and six years of experience delivering scalable, knowledge-driven data solutions across industry and research. Kashif received his PhD from Aalborg University, Denmark, where his research focused on query optimization and data quality in graph-based data models, particularly RDF and Property Graphs.
+                </p>
 
-        <span>Kashif has a PhD in Computer Science with specialization in Graph Databases. He is currently working as a Semantic Knowledge Engineer (Ontologist) at Novo Nordisk in Copenhagen, Denmark since January 2024.
+                <div id="expandedBio" style="display: none;">
+                        <p class="text-justify mb-3">
+                            At Novo Nordisk, he designs semantic data products—from ingestion and distributed processing to knowledge graph modeling, vector search, and LLM-ready retrieval. He recently led the development of a hybrid Graph-RAG system combining Milvus and GraphDB, reducing query latency by <span class="metric-info">82%<i class="fas fa-info-circle info-icon"></i>
+                                <span class="tooltip-content">🔍 82% Query Latency Reduction
+Measured using average response time across key query patterns before and after deploying the hybrid Graph-RAG system. Semantic subgraph filtering via Milvus reduced the volume and depth of graph traversals in GraphDB, cutting latency from ~3.2s to ~0.6s — an 82% improvement.</span>
+                            </span> through semantic subgraph filtering. Separately, he improved pipeline reliability by <span class="metric-info">45%<i class="fas fa-info-circle info-icon"></i>
+                                <span class="tooltip-content">🛡️ 45% Reduction in Pipeline Breakages
+Based on ingestion monitoring over a 3-month period. SHACL-based validation caught schema and data issues early, reducing ingestion failures from 22 to 12 per month — improving pipeline reliability by 45%.</span>
+                            </span> with SHACL-based contract validation.
+                        </p>
+                        <p class="text-justify mb-3">
+                            Earlier in his career, Kashif worked at NTT Data Company (Barcelona) in the Semantic Business Unit and completed a European Joint Master's in Big Data Management and Analytics (BDMA), studying at ULB (Belgium), UPC (Spain), and TU Berlin (Germany).
+                        </p>
+                        <p class="text-justify mb-3">
+                            He is known for combining strong architectural thinking with hands-on implementation, translating complex domain challenges into explainable, cost-efficient solutions grounded in semantic modeling, knowledge representation, and graph-based reasoning.
+                        </p>
+                    </div>
+                    <button id="readMoreBtn" class="btn btn-link p-0 text-decoration-none" onclick="toggleBio()">
+                        <span id="readMoreText">Read more</span> <i id="readMoreIcon" class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="social-links">
+                    <a class="btn btn-light" href="https://www.linkedin.com/in/kashifrabbani/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>            
+                    <a class="btn btn-light" href="https://scholar.google.com/citations?user=ylZLatcAAAAJ" target="_blank">
+                        <i class="fas fa-graduation-cap"></i> Google Scholar
+                    </a>
+                    <a class="btn btn-light" href="https://twitter.com/chkashifrabbani" target="_blank">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a class="btn btn-light" href="https://github.com/Kashif-Rabbani" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="mailto:ch.kashirabbani@gmail.com" class="btn btn-light">
+                        <i class="fas fa-envelope me-1"></i> Send Kashif an Email
+                    </a>
+                </div>
+            </div>
+        </div>
+  
 
-He received his PhD from the <a class="link-secondary" href="https://www.cs.aau.dk/" target="_blank">Department of Computer Science</a> at Aalborg University, Denmark.
-<br>
-Previously, he received a Joint Master's Degree in Big Data Management and Analytics (<a class="link-secondary"
-                                                                                         href="https://bdma.ulb.ac.be/bdma/"
-                                                                                         target="_blank">BDMA</a>) from ULB, Belgium; UPC, Spain; and TU-Berlin, Germany, in 2019. He has also served as a Data Engineer at everis Barcelona in the Semantic Business Unit (SEMBU). His research focuses on graph databases, knowledge graphs, query optimization, data modeling, databases, big data management, and analytics.
-</span>
-    </p>
-    <hr/>
+    <div class="section">
+        <h3 class="mb-3">Technical Skills & Expertise</h3>
+        <div class="row g-3">
+            <!-- Core Expertise Column -->
+            <div class="col-lg-6">
+                <div class="skills-category-card">
+                    <div class="skill-header">
+                        <i class="fas fa-project-diagram text-primary me-2"></i>
+                        <h5 class="mb-0">Graphs & Semantic Technologies</h5>
+                        <span class="badge bg-primary ms-auto">Expert</span>
+                    </div>
+                    <div class="skills-tags mt-2">
+                        <span class="skill-tag">TopBraid EDG</span>
+                        <span class="skill-tag">Neo4j</span>
+                        <span class="skill-tag">GraphDB</span>
+                        <span class="skill-tag">AWS Neptune</span>
+                        <span class="skill-tag">Protege/Semaphore</span>
+                        <span class="skill-tag">Virtuoso</span>
+                        <span class="skill-tag">Apache Jena</span>
+                        <span class="skill-tag">RDF4j</span>
+                        <span class="skill-tag">SPARQL</span>
+                        <span class="skill-tag">SHACL</span>
+                        <span class="skill-tag">OWL</span>
+                    </div>
+                </div>
 
+                <div class="skills-category-card">
+                    <div class="skill-header">
+                        <i class="fas fa-robot text-success me-2"></i>
+                        <h5 class="mb-0">AI & Machine Learning</h5>
+                        <span class="badge bg-success ms-auto">Expert</span>
+                    </div>
+                    <div class="skills-tags mt-2">
+                        <span class="skill-tag">OpenAI</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">Graph-RAG</span>
+                        <span class="skill-tag">Vector-RAG</span>
+                        <span class="skill-tag">Milvus DB</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Fine-Tuning</span>
+                        <span class="skill-tag">CurateGPT</span>
+                    </div>
+                </div>
 
-    
-    <h3><a class="md-header-anchor" name="highlights"></a><span>Highlights</span></h3>
-    <ul>
-        <li> Kashif defended his PhD thesis on July 29, 2024.</li>
-        <li> Starting from January 2024, Kashif has started working as a Research Ontologist at Novo Nordisk,
-            Måløv, Copenhagen, Denmark.
-        </li>
-        <li><span><span itemprop="author" itemscope itemtype="http://schema.org/Person">Kashif</span> has been working on a research project called RelWeb (<a
-                class="text-decoration-none" href="https://relweb.cs.aau.dk/"
-                target="_blank">A Reliable Web of Data</a>) during his PhD.</span></li>
-        <li><span>His PhD is about "Exploiting Schemas for Efficient Query Processing over Knowledge Graphs", supervised by
-                    <a class="text-decoration-none" href="http://people.cs.aau.dk/~khose/About_me.html"
-                       itemprop="author" itemscope itemtype="http://schema.org/Person"
-                       target="_blank"> Prof. Katja Hose</a> and
-                    <a class="text-decoration-none" href="https://lissandrini.com/" itemprop="author" itemscope
-                       itemtype="http://schema.org/Person"
-                       target="_blank"> Prof. Matteo Lissandrini</a>.</span>
-        </li>
-        <li><span>During his PhD, he has been exploring various approaches to optimize query processing on Web, specifically in Knowledge Graphs, by exploiting various schematic constraints such as SHACL/ShEx etc. Moreover, he is also involved in educational activities like supervision of 5th/6th semester's Software Engineering groups in their projects and teaching assistant for the Database Course.</span>
-        </li>
-        <li>
-            <span>He has also been serving as a VLDB and ISWC external reviewer for reviewing scientific papers.</span>
-        </li>
-    </ul>
-    <hr/>
+                <div class="skills-category-card">
+                    <div class="skill-header">
+                        <i class="fas fa-code text-info me-2"></i>
+                        <h5 class="mb-0">Programming & Development</h5>
+                        <span class="badge bg-info ms-auto">Advanced</span>
+                    </div>
+                    <div class="skills-tags mt-2">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">Spring Framework</span>
+                        <span class="skill-tag">Flask</span>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Supporting Technologies Column -->
+            <div class="col-lg-6">
+                <div class="skills-category-card">
+                    <div class="skill-header">
+                        <i class="fas fa-chart-line text-purple me-2"></i>
+                        <h5 class="mb-0">Big Data & Cloud</h5>
+                        <span class="badge bg-secondary ms-auto">Advanced</span>
+                    </div>
+                    <div class="skills-tags mt-2">
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Apache Spark</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
 
-    <h4><a class="md-header-anchor" name="research"></a><span>PhD Thesis</span></h4>
+                <div class="skills-category-card">
+                    <div class="skill-header">
+                        <i class="fas fa-chart-bar text-warning me-2"></i>
+                        <h5 class="mb-0">Analytics & Visualization</h5>
+                        <span class="badge bg-warning text-dark ms-auto">Advanced</span>
+                    </div>
+                    <div class="skills-tags mt-2">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Plotly</span>
+                        <span class="skill-tag">Highcharts</span>
+                    </div>
+                </div>
 
-    <ul>
-        <!-- Thesis -->
-        <li>
+                <div class="skills-category-card">
+                    <div class="skill-header">
+                        <i class="fas fa-graduation-cap text-primary me-2"></i>
+                        <h5 class="mb-0">Research & Development</h5>
+                        <span class="badge bg-primary ms-auto">Expert</span>
+                    </div>
+                    <div class="skills-tags mt-2">
+                        <span class="skill-tag">Research</span>
+                        <span class="skill-tag">Paper Writing</span>
+                        <span class="skill-tag">Peer Review</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">LaTeX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="section">
+        <h3>Highlights</h3>
+        <ul class="list-unstyled">
+            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Kashif defended his PhD thesis on July 29, 2024.</li>
+            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Kashif defended his PhD thesis on July 29, 2024.</li>
+            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Starting from January 2024, Kashif has started working as a Research Ontologist at Novo Nordisk, Måløv, Copenhagen, Denmark.</li>
+            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Kashif has been working on a research project called RelWeb (<a class="text-decoration-none" href="https://relweb.cs.aau.dk/" target="_blank">A Reliable Web of Data</a>) during his PhD.</li>
+            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> His PhD is about "Exploiting Schemas for Efficient Query Processing over Knowledge Graphs", supervised by <a class="text-decoration-none" href="http://people.cs.aau.dk/~khose/About_me.html" target="_blank">Prof. Katja Hose</a> and <a class="text-decoration-none" href="https://lissandrini.com/" target="_blank">Prof. Matteo Lissandrini</a>.</li>
+            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> During his PhD, he has been exploring various approaches to optimize query processing on Web, specifically in Knowledge Graphs, by exploiting various schematic constraints such as SHACL/ShEx etc.</li>
+            <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> He has also been serving as a VLDB and ISWC external reviewer for reviewing scientific papers.</li>
+        </ul>
+    </div> -->
+
+    <div class="section">
+        <h4>PhD Thesis</h4>
+        <div class="publication-item">
             <span class="fw-normal">Scalable Extraction and Adoption of Shapes for Improving Data Quality and Query Processing in Knowledge Graphs</span><br>
             <span class="fw-normal text-secondary">
-                <span itemprop="author" itemscope itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>
             </span>
-
-
-            <span class="fw-normal text-secondary">Aalborg University, Denmark </span>
-
-
-            <a aria-expanded="false" class="btn btn-light btn-sm"
-               href="https://vbn.aau.dk/ws/portalfiles/portal/740075028/PHD_KR_ONLINE.pdf"
-               role="button" target="_blank"><i
-                    class="fas fa-external-link-alt"> </i> Publisher Link</a>
-
-
-        </li>
-    </ul>
-    <hr/>
-
-    <h3><a class="md-header-anchor" name="research"></a><span>Publications</span></h3>
-    <!-- <p><span>I am interested in type of research......</span></p> -->
-    <ul>
-
-        <!-- Paper 8 -->
-        <li>
-            <span class="fw-normal">Transforming RDF Graphs to Property Graphs using Standardized Schemas</span><br>
-            <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
-                                                          itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,<span
-                    itemprop="author" itemscope
-                    itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
-                                                                                              itemscope
-                                                                                              itemtype="http://schema.org/Person">Katja Hose</span> </span>
-            <br>
-            <span class="fw-normal text-secondary">Companion of the 2024 International Conference on Management of Data (SIGMOD/PODS '25)  June 22-27, 2025   Berlin, Germany.</span>
-            <p>
-                <a aria-controls="abstractPaper8" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse" href="#abstractPaper8" role="button"><i class="far fa-sticky-note"> </i>
-                    Abstract</a>
-                <a aria-controls="citationPaper8" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse" href="#citationPaper8" role="button"><i class="fas fa-quote-left"> </i>
-                    Cite</a>
+            <span class="fw-normal text-secondary">Aalborg University, Denmark</span><br>
+            <span class="fw-normal text-secondary">Supervised by <a class="text-decoration-none" href="http://people.cs.aau.dk/~khose/About_me.html" target="_blank">Prof. Katja Hose</a> and <a class="text-decoration-none" href="https://lissandrini.com/" target="_blank">Prof. Matteo Lissandrini</a></span>
+            <div class="mt-2">
                 <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://dl.acm.org/doi/10.1145/3698817"
+                   href="https://vbn.aau.dk/ws/portalfiles/portal/740075028/PHD_KR_ONLINE.pdf"
                    role="button" target="_blank"><i
-                        class="fas fa-external-link-alt"> </i> Publisher Version</a>
-            </p>
-            <div class="collapse" id="abstractPaper8">
-                <div class="card card-body" itemprop="articleBody">
-                    Knowledge Graphs can be encoded using different data models. They are especially abundant using RDF and recently also as property graphs. While knowledge graphs in RDF adhere to the subject-predicate-object structure, property graphs utilize multi-labeled nodes and edges, featuring properties as key-value pairs. Both models are employed in various contexts, thus applications often require transforming data from one model to another. To enhance the interoperability of the two models, we present a novel technique, S3PG, to convert RDF knowledge graphs into property graphs exploiting two popular standards to express schema constraints, i.e., SHACL for RDF and PG-Schema for property graphs. S3PG is the first approach capable of transforming large knowledge graphs to property graphs while fully preserving information and semantics. We have evaluated S3PG on real-world large-scale graphs, showing that, while existing methods exhibit lossy transformations (causing a loss of up to 70% of query answers), S3PG consistently achieves 100% accuracy. Moreover, when considering evolving graphs, S3PG exhibits fully monotonic behavior and requires only a fraction of the time to incorporate changes compared to existing methods.
-                </div>
+                        class="fas fa-external-link-alt"> </i> Publisher Link</a>
             </div>
-            <div class="collapse" id="citationPaper8">
-                <div class="card card-body">
-                    <blockquote class="blockquote">
-                        <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. "Transforming RDF Graphs to Property Graphs using Standardized Schemas." Companion of the 2024 International Conference on Management of Data (SIGMOD/PODS '25) 2, (4): (December, 2024): 1-25.
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-        </li>
+        </div>
+    </div>
 
-        <!-- Paper 7 -->
-        <li>
-            <span class="fw-normal">SHACTOR: Improving the Quality of Large-Scale Knowledge Graphs with Validating Shapes</span><br>
-            <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
-                                                          itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,<span
-                    itemprop="author" itemscope
-                    itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
-                                                                                              itemscope
-                                                                                              itemtype="http://schema.org/Person">Katja Hose</span> </span>
-            <br>
-            <span class="fw-normal text-secondary">In Proceedings of the 2023 International Conference on Management of Data, (SIGMOD-Companion '23) June 18-23, 2023, Seattle, WA, USA. </span>
-            <p>
-                <a aria-controls="abstractPaper6" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse" href="#abstractPaper7" role="button"><i class="far fa-sticky-note"> </i>
-                    Abstract</a>
-                <a aria-controls="citationPaper6" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse" href="#citationPaper7" role="button"><i class="fas fa-quote-left"> </i>
-                    Cite</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/qse/shactor/"
-                   role="button"
-                   target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://relweb.cs.aau.dk/qse/files/shactor-demo-sigmod.pdf" role="button" target="_blank"><i
-                        class="fas fa-external-link-alt"> </i>PDF</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://dl.acm.org/doi/10.1145/3555041.3589723"
-                   role="button" target="_blank"><i
-                        class="fas fa-external-link-alt"> </i> Publisher Version</a>
+    <div class="section">
+        <h3>Publications</h3>
+        <div class="publications-grid">
+            <!-- Paper 8 -->
+            <div class="publication-item">
+                <span class="fw-normal">Transforming RDF Graphs to Property Graphs using Standardized Schemas</span><br>
+                <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
+                                                              itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,<span
+                        itemprop="author" itemscope
+                        itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, Angela Bonifati, and <span itemprop="author"
+                                                                                                  itemscope
+                                                                                                  itemtype="http://schema.org/Person">Katja Hose</span> </span>
+                <br>
+                <span class="fw-normal text-secondary">Companion of the 2024 International Conference on Management of Data (SIGMOD/PODS '25)  June 22-27, 2025   Berlin, Germany.</span>
+                <div class="mt-2">
+                    <a aria-controls="abstractPaper8" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse" href="#abstractPaper8" role="button"><i class="far fa-sticky-note"> </i>
+                        Abstract</a>
+                    <a aria-controls="citationPaper8" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse" href="#citationPaper8" role="button"><i class="fas fa-quote-left"> </i>
+                        Cite</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://dl.acm.org/doi/10.1145/3698817"
+                       role="button" target="_blank"><i
+                            class="fas fa-external-link-alt"> </i> Publisher Version</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://github.com/dkw-aau/s3pg"
+                       role="button" target="_blank"><i
+                            class="fas fa-external-link-alt"> </i> Source Code</a>        
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="poster/S3PG_SIGMOD25.pdf"
+                       role="button" target="_blank"><i
+                            class="fas fa-image"> </i> Poster</a>                                    
+                </div>
+                <div class="collapse" id="abstractPaper8">
+                    <div class="card card-body" itemprop="articleBody">
+                        Knowledge Graphs can be encoded using different data models. They are especially abundant using RDF and recently also as property graphs. While knowledge graphs in RDF adhere to the subject-predicate-object structure, property graphs utilize multi-labeled nodes and edges, featuring properties as key-value pairs. Both models are employed in various contexts, thus applications often require transforming data from one model to another. To enhance the interoperability of the two models, we present a novel technique, S3PG, to convert RDF knowledge graphs into property graphs exploiting two popular standards to express schema constraints, i.e., SHACL for RDF and PG-Schema for property graphs. S3PG is the first approach capable of transforming large knowledge graphs to property graphs while fully preserving information and semantics. We have evaluated S3PG on real-world large-scale graphs, showing that, while existing methods exhibit lossy transformations (causing a loss of up to 70% of query answers), S3PG consistently achieves 100% accuracy. Moreover, when considering evolving graphs, S3PG exhibits fully monotonic behavior and requires only a fraction of the time to incorporate changes compared to existing methods.
+                    </div>
+                </div>
+                <div class="collapse" id="citationPaper8">
+                    <div class="card card-body">
+                        <blockquote class="blockquote">
+                            <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. "Transforming RDF Graphs to Property Graphs using Standardized Schemas." Companion of the 2024 International Conference on Management of Data (SIGMOD/PODS '25) 2, (4): (December, 2024): 1-25.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
 
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/qse/shactor/#video"
-                   role="button" target="_blank"><i
-                        class="fas fa-play"> </i> Presentation & Demo Video</a>
-            </p>
-            <div class="collapse" id="abstractPaper7">
-                <div class="card card-body" itemprop="articleBody">
-                    We demonstrate SHACTOR, a system for extracting and analyzing validating shapes from very large
-                    Knowledge Graphs (KGs). Shapes represent a specific form of data patterns, akin to schemas for
-                    entities. Standard shape extraction approaches are likely to produce thousands of shapes, and some
-                    of those represent spurious constraints extracted due to the presence of erroneous data in the KG.
-                    Given a KG having tens of millions of triples and thousands of classes, SHACTOR parses the KG using
-                    our efficient and scalable shapes extraction algorithm and outputs SHACL shapes constraints. The
-                    extracted shapes are further annotated with statistical information regarding their support in the
-                    graph, which allows to identify both erroneous and missing triples in the KG. Hence, SHACTOR can be
-                    used to extract, analyze, and clean shape constraints from very large KGs. Furthermore, it enables
-                    the user to also find and correct errors by automatically generating SPARQL queries over the graph
-                    to retrieve nodes and facts that are the source of the spurious shapes and to intervene by amending
-                    the data.
+            <!-- Paper 7 -->
+            <div class="publication-item">
+                <span class="fw-normal">SHACTOR: Improving the Quality of Large-Scale Knowledge Graphs with Validating Shapes</span><br>
+                <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
+                                                              itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,<span
+                        itemprop="author" itemscope
+                        itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
+                                                                                                  itemscope
+                                                                                                  itemtype="http://schema.org/Person">Katja Hose</span> </span>
+                <br>
+                <span class="fw-normal text-secondary">In Proceedings of the 2023 International Conference on Management of Data, (SIGMOD-Companion '23) June 18-23, 2023, Seattle, WA, USA. </span>
+                <div class="mt-2">
+                    <a aria-controls="abstractPaper7" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse" href="#abstractPaper7" role="button"><i class="far fa-sticky-note"> </i>
+                        Abstract</a>
+                    <a aria-controls="citationPaper7" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse" href="#citationPaper7" role="button"><i class="fas fa-quote-left"> </i>
+                        Cite</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/qse/shactor/"
+                       role="button"
+                       target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://relweb.cs.aau.dk/qse/files/shactor-demo-sigmod.pdf" role="button" target="_blank"><i
+                            class="fas fa-external-link-alt"> </i>PDF</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://dl.acm.org/doi/10.1145/3555041.3589723"
+                       role="button" target="_blank"><i
+                            class="fas fa-external-link-alt"> </i> Publisher Version</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/qse/shactor/#video"
+                       role="button" target="_blank"><i
+                            class="fas fa-play"> </i> Presentation & Demo Video</a>
+                </div>
+                <div class="collapse" id="abstractPaper7">
+                    <div class="card card-body" itemprop="articleBody">
+                        We demonstrate SHACTOR, a system for extracting and analyzing validating shapes from very large
+                        Knowledge Graphs (KGs). Shapes represent a specific form of data patterns, akin to schemas for
+                        entities. Standard shape extraction approaches are likely to produce thousands of shapes, and some
+                        of those represent spurious constraints extracted due to the presence of erroneous data in the KG.
+                        Given a KG having tens of millions of triples and thousands of classes, SHACTOR parses the KG using
+                        our efficient and scalable shapes extraction algorithm and outputs SHACL shapes constraints. The
+                        extracted shapes are further annotated with statistical information regarding their support in the
+                        graph, which allows to identify both erroneous and missing triples in the KG. Hence, SHACTOR can be
+                        used to extract, analyze, and clean shape constraints from very large KGs. Furthermore, it enables
+                        the user to also find and correct errors by automatically generating SPARQL queries over the graph
+                        to retrieve nodes and facts that are the source of the spurious shapes and to intervene by amending
+                        the data.
+                    </div>
+                </div>
+                <div class="collapse" id="citationPaper7">
+                    <div class="card card-body">
+                        <blockquote class="blockquote">
+                            <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. SHACTOR: Improving the
+                                Quality of Large-Scale Knowledge Graphs with Validating Shapes. In Proceedings of the 2023
+                                International Conference on Management of Data, (SIGMOD-Companion '23)
+                                June 18-23, 2023, Seattle, WA, USA.
+                            </p>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
-            <div class="collapse" id="citationPaper7">
-                <div class="card card-body">
-                    <blockquote class="blockquote">
-                        <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. SHACTOR: Improving the
-                            Quality of Large-Scale Knowledge Graphs with Validating Shapes. In Proceedings of the 2023
-                            International Conference on Management of Data, (SIGMOD-Companion '23)
-                            June 18-23, 2023, Seattle, WA, USA.
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-        </li>
 
+            <!-- Paper 6 -->
+            <div class="publication-item">
+                <span class="fw-normal">Extraction of Validating Shapes from very large Knowledge Graphs</span><br>
+                <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
+                                                              itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,<span
+                        itemprop="author" itemscope
+                        itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
+                                                                                                  itemscope
+                                                                                                  itemtype="http://schema.org/Person">Katja Hose</span> </span>
+                <br>
+                <span class="fw-normal text-secondary">In Proceedings of the Very Large Databases 2023 (Volume 16 Issue 5, VLDB-2023) August 2023, Vancouver Canada.</span>
+                <div class="mt-2">
+                    <a aria-controls="abstractPaper6" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse" href="#abstractPaper6" role="button"><i class="far fa-sticky-note"> </i>
+                        Abstract</a>
+                    <a aria-controls="citationPaper6" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse" href="#citationPaper6" role="button"><i class="fas fa-quote-left"> </i>
+                        Cite</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/qse/" role="button"
+                       target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://relweb.cs.aau.dk/qse/files/qse-extended.pdf" role="button" target="_blank"><i
+                            class="fas fa-external-link-alt"> </i> Extended Version</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://www.vldb.org/pvldb/vol16/p1023-rabbani.pdf"
+                       role="button" target="_blank"><i
+                            class="fas fa-external-link-alt"> </i> Publisher Version</a>
+                </div>
+                <div class="collapse" id="abstractPaper6">
+                    <div class="card card-body" itemprop="articleBody">
+                        Knowledge Graphs (KGs) represent heterogeneous domain knowledge on the Web and within organizations.
+                        There exist shapes constraint languages to define validating shapes to ensure the quality of the
+                        data in KGs.
+                        Existing techniques to extract validating shapes often fail to extract complete shapes, are not
+                        scalable, and are prone to produce spurious shapes.
+                        To address these shortcomings, we propose the Quality Shapes Extraction (QSE) approach to extract
+                        validating shapes in very large graphs, for which we devise both an exact and an approximate
+                        solution.
+                        QSE provides information about the reliability of shape constraints by computing their confidence
+                        and support within a KG and in doing so allows to identify shapes that are most informative and less
+                        likely to be affected by incomplete or incorrect data.
+                        To the best of our knowledge, QSE is the first approach to extract a complete set of validating
+                        shapes from WikiData.
+                        Moreover, QSE provides a 12x reduction in extraction time compared to existing approaches,
+                        while managing to filter out up to 93% of the invalid and spurious shapes, resulting in a reduction
+                        of up to 2 orders of magnitude in the number of constraints presented to the user, e.g., from 11,916
+                        to 809 on DBpedia.
+                    </div>
+                </div>
+                <div class="collapse" id="citationPaper6">
+                    <div class="card card-body">
+                        <blockquote class="blockquote">
+                            <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. Extraction of Validating
+                                Shapes from very large Knowledge Graphs In Proceedings of the Very Large Databases 2023
+                                (Volume 16), August 28 - Sept 02, 2023, Vancouver, Canada.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Paper 6 -->
-        <li>
-            <span class="fw-normal">Extraction of Validating Shapes from very large Knowledge Graphs</span><br>
-            <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
-                                                          itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,<span
-                    itemprop="author" itemscope
-                    itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
-                                                                                              itemscope
-                                                                                              itemtype="http://schema.org/Person">Katja Hose</span> </span>
-            <br>
-            <span class="fw-normal text-secondary">In Proceedings of the Very Large Databases 2023 (Volume 16 Issue 5, VLDB-2023) August 2023, Vancouver Canada.</span>
-            <p>
-                <a aria-controls="abstractPaper6" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse" href="#abstractPaper6" role="button"><i class="far fa-sticky-note"> </i>
-                    Abstract</a>
-                <a aria-controls="citationPaper6" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse" href="#citationPaper6" role="button"><i class="fas fa-quote-left"> </i>
-                    Cite</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/qse/" role="button"
-                   target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://relweb.cs.aau.dk/qse/files/qse-extended.pdf" role="button" target="_blank"><i
-                        class="fas fa-external-link-alt"> </i> Extended Version</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://www.vldb.org/pvldb/vol16/p1023-rabbani.pdf"
-                   role="button" target="_blank"><i
-                        class="fas fa-external-link-alt"> </i> Publisher Version</a>
-            </p>
-            <div class="collapse" id="abstractPaper6">
-                <div class="card card-body" itemprop="articleBody">
-                    Knowledge Graphs (KGs) represent heterogeneous domain knowledge on the Web and within organizations.
-                    There exist shapes constraint languages to define validating shapes to ensure the quality of the
-                    data in KGs.
-                    Existing techniques to extract validating shapes often fail to extract complete shapes, are not
-                    scalable, and are prone to produce spurious shapes.
-                    To address these shortcomings, we propose the Quality Shapes Extraction (QSE) approach to extract
-                    validating shapes in very large graphs, for which we devise both an exact and an approximate
-                    solution.
-                    QSE provides information about the reliability of shape constraints by computing their confidence
-                    and support within a KG and in doing so allows to identify shapes that are most informative and less
-                    likely to be affected by incomplete or incorrect data.
-                    To the best of our knowledge, QSE is the first approach to extract a complete set of validating
-                    shapes from WikiData.
-                    Moreover, QSE provides a 12x reduction in extraction time compared to existing approaches,
-                    while managing to filter out up to 93% of the invalid and spurious shapes, resulting in a reduction
-                    of up to 2 orders of magnitude in the number of constraints presented to the user, e.g., from 11,916
-                    to 809 on DBpedia.
-                </div>
-            </div>
-            <div class="collapse" id="citationPaper6">
-                <div class="card card-body">
-                    <blockquote class="blockquote">
-                        <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. Extraction of Validating
-                            Shapes from very large Knowledge Graphs In Proceedings of the Very Large Databases 2023
-                            (Volume 16), August 28 - Sept 02, 2023, Vancouver, Canada.
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-        </li>
-
-
-        <!-- Paper 5 - Master Thesis -->
-        <li>
-            <span class="fw-normal">End-to-End Incremental Data Integration via Knowledge Graphs</span><br>
-
-            <span class="fw-normal text-secondary">
-            Javier flores,
-            <b>Kashif Rabbani</b>,
-            Sergi Nadal,
-            Cristina Gómez,
-            Oscar Romero,
-            Emmanuel Jamin,
-            Stamatia Dasiopoulou
-            </span>
-            <br>
-            <span class="fw-normal text-secondary">In Semantic Web Journal (SWJ)</span>
-            <p>
-                <a aria-controls="abstractPaper3" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#abstractPaper5" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
-                <!--                <a aria-controls="citationPaper5" aria-expanded="false" class="btn btn-light btn-sm" data-bs-toggle="collapse" href="#citationPaper5" role="button"><i class="fas fa-quote-left"> </i> Cite</a>-->
-                <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://www.semantic-web-journal.net/content/incremental-schema-integration-data-wrangling-knowledge-graphs-0"
-                   role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> SWJ </a>
-                <!--                <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/validatingshapes.pdf" role="button"  target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>-->
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/data_integration_swj.pdf"
-                   role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> Publisher Version</a>
-            </p>
-            <div class="collapse" id="abstractPaper5">
-                <div class="card card-body" itemprop="articleBody">
-                    Data integration, the task of providing a unified view over a set of data sources, is undoubtedly a
-                    major challenge for the knowledge graph community. Indeed, such flexible data structure allows to
-                    model the characteristics of source schemata, rich semantics for the global schema and the mappings
-                    between them. Yet, the design of such data integration systems still entails a manually arduous
-                    task. This becomes aggravated when dealing with heterogeneous and evolving data sources. To overcome
-                    these issues, we propose a fully-fledged semi-automatic and incremental data integration approach.
-                    By considering all tasks that compose the end-to-end data integration workflow (i.e., bootstrapping,
-                    schema matching, schema integration and generation of querying constructs, we are able to address
-                    them in a unified manner.We provide algorithms for each task, as well as theoretically prove the
-                    correctness of our approach and experimentally show its practical applicability.
-                </div>
-            </div>
-            <div class="collapse" id="citationPaper5">
-                <div class="card card-body">
-                    <blockquote class="blockquote">
-                        <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. SHACL and ShEx in the
-                            Wild: A Community Survey on Validating Shapes Generation and Adoption.
-                            In Companion Proceedings of the Web Conference 2022 (WWW'22 Companion), April 25-29 2022.
-                            Lyon France.
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-        </li>
-
-        <!-- Paper 4 -->
-        <li>
-            <span class="fw-normal">SHACL and ShEx in the Wild: A Community Survey on Validating Shapes Generation and Adoption</span><br>
-            <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
-                                                          itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,<span
-                    itemprop="author" itemscope
-                    itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
-                                                                                              itemscope
-                                                                                              itemtype="http://schema.org/Person">Katja Hose</span> </span>
-            <br>
-            <span class="fw-normal text-secondary">In Companion Proceedings of the Web Conference 2022 (WWW'22 Companion), April 25-29 2022. DOI: 10.1145/3487553.3524253</span>
-            <p>
-                <a aria-controls="abstractPaper3" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#abstractPaper4" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
-                <a aria-controls="citationPaper4" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#citationPaper4" role="button"><i class="fas fa-quote-left"> </i> Cite</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/validatingshapes/"
-                   role="button"
-                   target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/validatingshapes.pdf"
-                   role="button"
-                   target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://dl.acm.org/doi/10.1145/3487553.3524253" role="button" target="_blank"><i
-                        class="fas fa-external-link-alt"> </i> Publisher Version</a>
-            </p>
-            <div class="collapse" id="abstractPaper4">
-                <div class="card card-body" itemprop="articleBody">
-                    Knowledge Graphs (KGs) are widely used to represent heterogeneous domain knowledge on the Web and
-                    within organizations. Various methods exist to manage KGs and ensure the quality of their data.
-                    Among these, the Shapes Constraint Language (SHACL) and the Shapes Expression Language (ShEx) are
-                    the two state-of-the-art languages to define validating shapes for KGs. Since the usage of these
-                    constraint languages has recently increased, new needs arose. One such need is to enable the
-                    efficient generation of these shapes. Yet, since these languages are relatively new, we witness a
-                    lack of understanding of how they are effectively employed for existing KGs. Therefore, in this
-                    work, we answer How validating shapes are being generated and adopted? Our contribution is
-                    threefold. First, we conducted a community survey to analyze the needs of users (both from industry
-                    and academia) generating validating shapes. Then, we cross-referenced our results with an extensive
-                    survey of the existing tools and their features. Finally, we investigated how existing automatic
-                    shape extraction approaches work in practice on real, large KGs. Our analysis shows the need for
-                    developing semi-automatic methods that can help users generate shapes from large KGs.
-                </div>
-            </div>
-            <div class="collapse" id="citationPaper4">
-                <div class="card card-body">
-                    <blockquote class="blockquote">
-                        <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. SHACL and ShEx in the
-                            Wild: A Community Survey on Validating Shapes Generation and Adoption.
-                            In Companion Proceedings of the Web Conference 2022 (WWW'22 Companion), April 25-29 2022.
-                            Lyon France.
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-        </li>
-
-
-        <!-- Paper 3 -->
-        <li>
-            <span class="fw-normal">Optimizing SPARQL Queries using Shape Statistics</span><br>
-            <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
-                                                          itemtype="http://schema.org/Person"><b>Kashif Rabbani</b></span>,<span
-                    itemprop="author" itemscope
-                    itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
-                                                                                              itemscope
-                                                                                              itemtype="http://schema.org/Person">Katja Hose</span> </span>
-            <br>
-            <span class="fw-normal text-secondary">In Proceedings of the 24th International Conference on Extending Database Technology, EDBT 2021.</span>
-            <p>
-                <a aria-controls="abstractPaper3" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#abstractPaper3" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
-                <a aria-controls="citationPaper3" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#citationPaper3" role="button"><i class="fas fa-quote-left"> </i> Cite</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/rdfshapes/"
-                   role="button"
-                   target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/rdfshapes.pdf" role="button"
-                   target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://openproceedings.org/2021/conf/edbt/p202.pdf" role="button" target="_blank"><i
-                        class="fas fa-external-link-alt"> </i> Publisher Version</a>
-            </p>
-            <div class="collapse" id="abstractPaper3">
-                <div class="card card-body" itemprop="articleBody">
-                    With the growing popularity of storing data in native RDF, we witness more and more diverse use
-                    cases with complex SPARQL queries. As a consequence, query optimization - and in particular
-                    cardinality estimation and join ordering - becomes
-                    even more crucial. Classical methods exploit global statistics covering the entire RDF graph as a
-                    whole, which naturally fails to correctly capture correlations that are very common in RDF datasets,
-                    which then leads to erroneous
-                    cardinality estimations and suboptimal query execution plans. The alternative of trying to capture
-                    correlations in a fine-granular manner, on the other hand, results in very costly preprocessing
-                    steps to create these statistics. Hence, in
-                    this paper we propose shapes statistics, which extend the recent SHACL standard with statistic
-                    information to capture the correlation between classes and properties. Our extensive experiments on
-                    synthetic and real data show that shapes
-                    statistics can be generated and managed with only little overhead without disadvantages in query
-                    runtime while leading to noticeable improvements in cardinality estimation.
-                </div>
-            </div>
-            <div class="collapse" id="citationPaper3">
-                <div class="card card-body">
-                    <blockquote class="blockquote">
-                        <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. Optimizing SPARQL Queries
-                            using Shape Statistics. Proceedings of the 24th International Conference on Extending
-                            Database Technology, EDBT 2021
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-        </li>
-        <!-- Paper 2 -->
-        <li>
-            <span class="fw-normal">ODIN: A dataspace management system</span><br>
-            <span class="fw-normal text-secondary">Nadal Francesch, Sergi, <b>Kashif Rabbani</b>, Óscar Romero Moral, and Shumet Tadesse Nigatu </span>
-            <br>
-            <span class="fw-normal text-secondary">In Proceedings of the ISWC 2019 Satellite Tracks (Posters & Demonstrations, Industry,
-                    and Outrageous Ideas): co-located with 18th International Semantic Web Conference, ISWC 2019.</span>
-            <p>
-                <a aria-controls="abstractPaper2" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#abstractPaper2" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
-                <a aria-controls="citationPaper2" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#citationPaper2" role="button"><i class="fas fa-quote-left"> </i> Cite</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="https://www.essi.upc.edu/~snadal/odin.html"
-                   role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/odin.pdf" role="button"
-                   target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="http://ceur-ws.org/Vol-2456/paper48.pdf"
-                   role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> Publisher Version</a>
-            </p>
-            <div class="collapse" id="abstractPaper2">
-                <div class="card card-body" itemprop="articleBody">
-                    ODIN (On-demand Data Integration) is a system that supports the incremental pay-as-you-go
-                    integration of data sources into dataspaces and provides user-friendly querying mechanisms of the
-                    resulting dataspaces. This website is a companion
-                    of a demonstration paper submitted to ISWC 2019, where we describe some of its characteristics and
-                    underlying assumptions, including the user interactions required. ODIN's novelty lies in a largely
-                    automated bottom-up approach (i.e.,
-                    driven by the sources at hand) that includes the user in the loop for disambiguation purposes. ODIN
-                    relies on the concept of traceability graph, which are generic metadata abstraction (i.e., not
-                    tailored for an specific task) about the
-                    integration of a particular set of data sources. From this graphs, ODIN is capable of generating
-                    target-oriented metadata constructs. In this demonstration we focus on those for query answering
-                    over dataspaces.
-                </div>
-            </div>
-            <div class="collapse" id="citationPaper2">
-                <div class="card card-body">
-                    <blockquote class="blockquote">
-                        <p class="fs-6">Nadal Francesch, Sergi, <b>Kashif Rabbani</b>, Óscar Romero Moral, and Shumet
-                            Tadesse
-                            Nigatu. "ODIN: A dataspace management system." In Proceedings of the ISWC 2019 Satellite
-                            Tracks (Posters & Demonstrations, Industry, and
-                            Outrageous Ideas): co-located with 18th International Semantic Web Conference (ISWC 2019):
-                            Auckland, New Zealand, October 26-30, 2019, pp. 185-188. CEUR-WS. org, 2019
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-        </li>
-        <!-- Paper 1 -->
-        <li>
-            <span class="fw-normal">ARDI: Automatic Generation of RDFS Models from Heterogeneous Data Sources.</span><br>
-            <span class="fw-normal text-secondary">Shumet Tadesse, Cristina Gómez, Oscar Romero, Katja Hose, <b>Kashif Rabbani</b> </span>
-            <br>
-            <span class="fw-normal text-secondary">In IEEE 23rd International Enterprise Distributed Object Computing Conference, EDOC 2019.</span>
-            <p>
-                <a aria-controls="abstractPaper1" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#abstractPaper1" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
-                <a aria-controls="citationPaper1" aria-expanded="false" class="btn btn-light btn-sm"
-                   data-bs-toggle="collapse"
-                   href="#citationPaper1" role="button"><i class="fas fa-quote-left"> </i> Cite</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/ardi.pdf" role="button"
-                   target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>
-                <a aria-expanded="false" class="btn btn-light btn-sm"
-                   href="https://ieeexplore.ieee.org/document/8945018"
-                   role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> Publisher Version</a>
-            </p>
-            <div class="collapse" id="abstractPaper1">
-                <div class="card card-body" itemprop="articleBody">
-                    The current wealth of information, typically known as Big Data, generates a large amount of
-                    available data for organisations. Data Integration provides foundations to query disparate data
-                    sources as if they were integrated into a single
-                    source. However, current data integration tools are far from being useful for most organisations due
-                    to the heterogeneous nature of data sources, which represents a challenge for current frameworks. To
-                    enable data integration of highly
-                    heterogeneous and disparate data sources, this paper proposes a method to extract the schema from
-                    semi-structured (such as JSON and XML) and structured (such as relational) data sources, and
-                    generate an equivalent RDFS representation. The
-                    output of our method complements current frameworks and reduces the manual workload required to
-                    represent the input data sources in terms of the integration canonical data model. Our approach
-                    consists of production rules at the meta-model
-                    level that guarantee the correctness of the model translations. Finally, a tool for implementing our
-                    approach has been developed.
-                </div>
-            </div>
-            <div class="collapse" id="citationPaper1">
-                <div class="card card-body">
-                    <blockquote class="blockquote">
-                        <p class="fs-6">Tadesse, Shumet, Cristina Gómez, Oscar Romero, Katja Hose, and Kashif Rabbani.
-                            "ARDI: Automatic Generation of RDFS Models from Heterogeneous Data Sources." In 2019 IEEE
-                            23rd International Enterprise Distributed Object
-                            Computing Conference (EDOC), pp. 190-196. IEEE, 2019
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-        </li>
-    </ul>
-    <hr/>
-    <h4><a class="md-header-anchor" name="masterthesis"></a><span>Master Thesis</span></h4>
-    <ul>
-        <li> Thesis title: "Supporting the Semi-Automatic Creation of the Target Schema in Data Integration Systems".
-            BDMA 2019 <br>
-            Supervisors: Prof. Dr. Oscar Romero (UPC), Prof. Dr. Volker Markl (TU-Berlin), and Dr. Ralf-Detlef Kutsche
-            (on behalf of the BDMA steering board).
-            Advisors: Prof. Dr. Oscar Romero (UPC), Mr. Shumet Tadesse Nigatu (UPC), and Dr. Ralf-Detlef Kutsche
-            (TU-Berlin).
-
-            Thesis available
-            <a class="text-decoration-none"
-               href='https://www.researchgate.net/profile/Kashif-Rabbani-3/publication/359621337_Supporting_the_Semi-Automatic_Creation_of_the_Target_Schema_in_Data_Integration_Systems/links/6245a7fb21077329f2e4883a/Supporting-the-Semi-Automatic-Creation-of-the-Target-Schema-in-Data-Integration-Systems.pdf'
-               target="_blank"><span> here</span></a><span>.
-        </li>
-
-    </ul>
-    <hr/>
-
-    <h3><a class="md-header-anchor" name="educational-activities"></a><span>Educational activities</span></h3>
-    <p>
-                <span>
-                Kashif's educational activities focus on supervising and assisting
-                multiple groups of computer science and software engineering students at bachelors level in Aalborg University.
+            <!-- Paper 5 -->
+            <div class="publication-item">
+                <span class="fw-normal">End-to-End Incremental Data Integration via Knowledge Graphs</span><br>
+                <span class="fw-normal text-secondary">
+                Javier flores,
+                <b>Kashif Rabbani</b>,
+                Sergi Nadal,
+                Cristina Gómez,
+                Oscar Romero,
+                Emmanuel Jamin,
+                Stamatia Dasiopoulou
                 </span>
-    </p>
-    <!-- <h4><a name="current-courses" class="md-header-anchor"></a><span>Current courses</span></h4> -->
-    <ul>
-        <li>
-            <p>
-                <span class="fw-normal">Teaching Assistant for Database Management System Course</span><br>
-                <span class="fw-normal text-secondary"> Fall 2020, Fall 2021, and Fall 2022, BSc Software Engineering Course, Computer Science Department, Aalborg University.</span>
-            </p>
-            <!-- <ul>
-                <li><span>2020</span></li>
-                </ul> -->
-        </li>
-        <li>
-            <p>
-                <span class="fw-normal">Group Supervisor for 5th semster students working on Knox (Knowledge Engineering Toolbox) project</span><br>
-                <span class="fw-normal text-secondary">Fall 2020 and Fall 2021, BSc Software Engineering - Semester Project, Computer Science Department, Aalborg University.</span>
-            </p>
-            <!-- <ul>
-                <li><span>2020</span></li>
-                </ul> -->
-        </li>
-        <li>
-            <p>
-                <span class="fw-normal">Group Supervisor for final semester students working on analyzing large scale ships AIS data</span><br>
-                <span class="fw-normal text-secondary">Spring 2021, BSc Software Engineering - Bachelors Project, Computer Science Department, Aalborg University.</span>
-            </p>
-            <!-- <ul>
-                <li><span>2020</span></li>
-                </ul> -->
-        </li>
-    </ul>
-    <span>
-            Additionally, he participates in various related conferences and summer/winter schools.
-            <ul>
-                <li>
-                    He attended <a class="text-decoration-none" href='https://cs.ulb.ac.be/conferences/ebiss2022/'
-                                   target="_blank">Tenth European Big Data Management & Analytics Summer School (eBISS)</a>  in 2022 where he presented a poster about his PhD. The poster is available at
-                    <a
-                            class="text-decoration-none" href='ebiss/poster-eBISS-2022.pdf' target="_blank">
-                        this <span></span></a> link.
-                </li>
-            </ul>
-            </span>
-    </p>
-    <hr/>
-    <h4><a class="md-header-anchor" name="awards"></a><span>Achievements, Awards, and Grants</span></h4>
-    <ul>
+                <br>
+                <span class="fw-normal text-secondary">In Semantic Web Journal (SWJ)</span>
+                <div class="mt-2">
+                    <a aria-controls="abstractPaper5" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#abstractPaper5" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://www.semantic-web-journal.net/content/incremental-schema-integration-data-wrangling-knowledge-graphs-0"
+                       role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> SWJ </a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/data_integration_swj.pdf"
+                       role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> Publisher Version</a>
+                </div>
+                <div class="collapse" id="abstractPaper5">
+                    <div class="card card-body" itemprop="articleBody">
+                        Data integration, the task of providing a unified view over a set of data sources, is undoubtedly a
+                        major challenge for the knowledge graph community. Indeed, such flexible data structure allows to
+                        model the characteristics of source schemata, rich semantics for the global schema and the mappings
+                        between them. Yet, the design of such data integration systems still entails a manually arduous
+                        task. This becomes aggravated when dealing with heterogeneous and evolving data sources. To overcome
+                        these issues, we propose a fully-fledged semi-automatic and incremental data integration approach.
+                        By considering all tasks that compose the end-to-end data integration workflow (i.e., bootstrapping,
+                        schema matching, schema integration and generation of querying constructs, we are able to address
+                        them in a unified manner.We provide algorithms for each task, as well as theoretically prove the
+                        correctness of our approach and experimentally show its practical applicability.
+                    </div>
+                </div>
+            </div>
 
-        <li>
-            <p><span>PhD Study Abroad Travel Grants 2023</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">I was awarded travel grants by <b>Otto Mønsted</b> and <b>Danish
-                    Data Science Academy</b> for study abroad during my PhD studies.
-                </li>
-            </ul>
-        </li>
+            <!-- Paper 4 -->
+            <div class="publication-item hidden-publications" id="paper4">
+                <span class="fw-normal">SHACL and ShEx in the Wild: A Community Survey on Validating Shapes Generation and Adoption</span><br>
+                <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
+                                                              itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>,<span
+                        itemprop="author" itemscope
+                        itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
+                                                                                                  itemscope
+                                                                                                  itemtype="http://schema.org/Person">Katja Hose</span> </span>
+                <br>
+                <span class="fw-normal text-secondary">In Companion Proceedings of the Web Conference 2022 (WWW'22 Companion), April 25-29 2022. DOI: 10.1145/3487553.3524253</span>
+                <div class="mt-2">
+                    <a aria-controls="abstractPaper4" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#abstractPaper4" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
+                    <a aria-controls="citationPaper4" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#citationPaper4" role="button"><i class="fas fa-quote-left"> </i> Cite</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/validatingshapes/"
+                       role="button"
+                       target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/validatingshapes.pdf"
+                       role="button"
+                       target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://dl.acm.org/doi/10.1145/3487553.3524253" role="button" target="_blank"><i
+                            class="fas fa-external-link-alt"> </i> Publisher Version</a>
+                </div>
+                <div class="collapse" id="abstractPaper4">
+                    <div class="card card-body" itemprop="articleBody">
+                        Knowledge Graphs (KGs) are widely used to represent heterogeneous domain knowledge on the Web and
+                        within organizations. Various methods exist to manage KGs and ensure the quality of their data.
+                        Among these, the Shapes Constraint Language (SHACL) and the Shapes Expression Language (ShEx) are
+                        the two state-of-the-art languages to define validating shapes for KGs. Since the usage of these
+                        constraint languages has recently increased, new needs arose. One such need is to enable the
+                        efficient generation of these shapes. Yet, since these languages are relatively new, we witness a
+                        lack of understanding of how they are effectively employed for existing KGs. Therefore, in this
+                        work, we answer How validating shapes are being generated and adopted? Our contribution is
+                        threefold. First, we conducted a community survey to analyze the needs of users (both from industry
+                        and academia) generating validating shapes. Then, we cross-referenced our results with an extensive
+                        survey of the existing tools and their features. Finally, we investigated how existing automatic
+                        shape extraction approaches work in practice on real, large KGs. Our analysis shows the need for
+                        developing semi-automatic methods that can help users generate shapes from large KGs.
+                    </div>
+                </div>
+                <div class="collapse" id="citationPaper4">
+                    <div class="card card-body">
+                        <blockquote class="blockquote">
+                            <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. SHACL and ShEx in the
+                                Wild: A Community Survey on Validating Shapes Generation and Adoption.
+                                In Companion Proceedings of the Web Conference 2022 (WWW'22 Companion), April 25-29 2022.
+                                Lyon France.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
 
-        <li>
-            <p><span>Big Data Talent Awards 2019 (Runner-up)</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">I was selected as a runner-up for <a class="text-decoration-none"
-                                                                                          href='https://www.fib.upc.edu/en/news/big-data-talent-awards-2019'
-                                                                                          target="_blank"><span>Big Data Talent Awards 2019</span></a><span>  at UPC Barcelona, Spain for my master thesis titled as "Dataspaces: Pay-As-you-go Data Integration".</span>
-                </li>
-            </ul>
-        </li>
+            <!-- Paper 3 -->
+            <div class="publication-item hidden-publications" id="paper3">
+                <span class="fw-normal">Optimizing SPARQL Queries using Shape Statistics</span><br>
+                <span class="fw-normal text-secondary"> <span itemprop="author" itemscope
+                                                              itemtype="http://schema.org/Person"><b>Kashif Rabbani</b></span>,<span
+                        itemprop="author" itemscope
+                        itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
+                                                                                                  itemscope
+                                                                                                  itemtype="http://schema.org/Person">Katja Hose</span> </span>
+                <br>
+                <span class="fw-normal text-secondary">In Proceedings of the 24th International Conference on Extending Database Technology, EDBT 2021.</span>
+                <div class="mt-2">
+                    <a aria-controls="abstractPaper3" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#abstractPaper3" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
+                    <a aria-controls="citationPaper3" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#citationPaper3" role="button"><i class="fas fa-quote-left"> </i> Cite</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="https://relweb.cs.aau.dk/rdfshapes/"
+                       role="button"
+                       target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/rdfshapes.pdf" role="button"
+                       target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://openproceedings.org/2021/conf/edbt/p202.pdf" role="button" target="_blank"><i
+                            class="fas fa-external-link-alt"> </i> Publisher Version</a>
+                </div>
+                <div class="collapse" id="abstractPaper3">
+                    <div class="card card-body" itemprop="articleBody">
+                        With the growing popularity of storing data in native RDF, we witness more and more diverse use
+                        cases with complex SPARQL queries. As a consequence, query optimization - and in particular
+                        cardinality estimation and join ordering - becomes
+                        even more crucial. Classical methods exploit global statistics covering the entire RDF graph as a
+                        whole, which naturally fails to correctly capture correlations that are very common in RDF datasets,
+                        which then leads to erroneous
+                        cardinality estimations and suboptimal query execution plans. The alternative of trying to capture
+                        correlations in a fine-granular manner, on the other hand, results in very costly preprocessing
+                        steps to create these statistics. Hence, in
+                        this paper we propose shapes statistics, which extend the recent SHACL standard with statistic
+                        information to capture the correlation between classes and properties. Our extensive experiments on
+                        synthetic and real data show that shapes
+                        statistics can be generated and managed with only little overhead without disadvantages in query
+                        runtime while leading to noticeable improvements in cardinality estimation.
+                    </div>
+                </div>
+                <div class="collapse" id="citationPaper3">
+                    <div class="card card-body">
+                        <blockquote class="blockquote">
+                            <p class="fs-6">Rabbani, Kashif; Lissandrini, Matteo; and Hose, Katja. Optimizing SPARQL Queries
+                                using Shape Statistics. Proceedings of the 24th International Conference on Extending
+                                Database Technology, EDBT 2021
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
 
-        <li>
-            <p><span>Erasmus Mundus Scholarship</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">I was awarded a fully funded scholarship for my master's degree in
-                    Big Data Management and Analytics (<a class="text-decoration-none" href='https://bdma.ulb.ac.be/'
-                                                          target="_blank"><span>BDMA</span></a><span>).</span>
-                </li>
-            </ul>
-        </li>
+            <!-- Paper 2 -->
+            <div class="publication-item hidden-publications" id="paper2">
+                <span class="fw-normal">ODIN: A dataspace management system</span><br>
+                <span class="fw-normal text-secondary">Nadal Francesch, Sergi, <b>Kashif Rabbani</b>, Óscar Romero Moral, and Shumet Tadesse Nigatu </span>
+                <br>
+                <span class="fw-normal text-secondary">In Proceedings of the ISWC 2019 Satellite Tracks (Posters & Demonstrations, Industry,
+                        and Outrageous Ideas): co-located with 18th International Semantic Web Conference, ISWC 2019.</span>
+                <div class="mt-2">
+                    <a aria-controls="abstractPaper2" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#abstractPaper2" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
+                    <a aria-controls="citationPaper2" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#citationPaper2" role="button"><i class="fas fa-quote-left"> </i> Cite</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="https://www.essi.upc.edu/~snadal/odin.html"
+                       role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> Website</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/odin.pdf" role="button"
+                       target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="http://ceur-ws.org/Vol-2456/paper48.pdf"
+                       role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> Publisher Version</a>
+                </div>
+                <div class="collapse" id="abstractPaper2">
+                    <div class="card card-body" itemprop="articleBody">
+                        ODIN (On-demand Data Integration) is a system that supports the incremental pay-as-you-go
+                        integration of data sources into dataspaces and provides user-friendly querying mechanisms of the
+                        resulting dataspaces. This website is a companion
+                        of a demonstration paper submitted to ISWC 2019, where we describe some of its characteristics and
+                        underlying assumptions, including the user interactions required. ODIN's novelty lies in a largely
+                        automated bottom-up approach (i.e.,
+                        driven by the sources at hand) that includes the user in the loop for disambiguation purposes. ODIN
+                        relies on the concept of traceability graph, which are generic metadata abstraction (i.e., not
+                        tailored for an specific task) about the
+                        integration of a particular set of data sources. From this graphs, ODIN is capable of generating
+                        target-oriented metadata constructs. In this demonstration we focus on those for query answering
+                        over dataspaces.
+                    </div>
+                </div>
+                <div class="collapse" id="citationPaper2">
+                    <div class="card card-body">
+                        <blockquote class="blockquote">
+                            <p class="fs-6">Nadal Francesch, Sergi, <b>Kashif Rabbani</b>, Óscar Romero Moral, and Shumet
+                                Tadesse
+                                Nigatu. "ODIN: A dataspace management system." In Proceedings of the ISWC 2019 Satellite
+                                Tracks (Posters & Demonstrations, Industry, and
+                                Outrageous Ideas): co-located with 18th International Semantic Web Conference (ISWC 2019):
+                                Auckland, New Zealand, October 26-30, 2019, pp. 185-188. CEUR-WS. org, 2019
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paper 1 -->
+            <div class="publication-item hidden-publications" id="paper1">
+                <span class="fw-normal">ARDI: Automatic Generation of RDFS Models from Heterogeneous Data Sources.</span><br>
+                <span class="fw-normal text-secondary">Shumet Tadesse, Cristina Gómez, Oscar Romero, Katja Hose, <b>Kashif Rabbani</b> </span>
+                <br>
+                <span class="fw-normal text-secondary">In IEEE 23rd International Enterprise Distributed Object Computing Conference, EDOC 2019.</span>
+                <div class="mt-2">
+                    <a aria-controls="abstractPaper1" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#abstractPaper1" role="button"><i class="far fa-sticky-note"> </i> Abstract</a>
+                    <a aria-controls="citationPaper1" aria-expanded="false" class="btn btn-light btn-sm"
+                       data-bs-toggle="collapse"
+                       href="#citationPaper1" role="button"><i class="fas fa-quote-left"> </i> Cite</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm" href="publications/ardi.pdf" role="button"
+                       target="_blank"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="https://ieeexplore.ieee.org/document/8945018"
+                       role="button" target="_blank"><i class="fas fa-external-link-alt"> </i> Publisher Version</a>
+                </div>
+                <div class="collapse" id="abstractPaper1">
+                    <div class="card card-body" itemprop="articleBody">
+                        The current wealth of information, typically known as Big Data, generates a large amount of
+                        available data for organisations. Data Integration provides foundations to query disparate data
+                        sources as if they were integrated into a single
+                        source. However, current data integration tools are far from being useful for most organisations due
+                        to the heterogeneous nature of data sources, which represents a challenge for current frameworks. To
+                        enable data integration of highly
+                        heterogeneous and disparate data sources, this paper proposes a method to extract the schema from
+                        semi-structured (such as JSON and XML) and structured (such as relational) data sources, and
+                        generate an equivalent RDFS representation. The
+                        output of our method complements current frameworks and reduces the manual workload required to
+                        represent the input data sources in terms of the integration canonical data model. Our approach
+                        consists of production rules at the meta-model
+                        level that guarantee the correctness of the model translations. Finally, a tool for implementing our
+                        approach has been developed.
+                    </div>
+                </div>
+                <div class="collapse" id="citationPaper1">
+                    <div class="card card-body">
+                        <blockquote class="blockquote">
+                            <p class="fs-6">Tadesse, Shumet, Cristina Gómez, Oscar Romero, Katja Hose, and Kashif Rabbani.
+                                "ARDI: Automatic Generation of RDFS Models from Heterogeneous Data Sources." In 2019 IEEE
+                                23rd International Enterprise Distributed Object
+                                Computing Conference (EDOC), pp. 190-196. IEEE, 2019
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Publications Toggle Button -->
+        <div class="publications-toggle">
+            <button class="show-more-btn" id="togglePublications" onclick="togglePublications()">
+                <i class="fas fa-chevron-down me-2"></i>Show More Publications
+            </button>
+        </div>
+        
+        <!-- Master Thesis -->
+        <div class="publication-item mt-4 hidden-publications" id="masterThesis">
+            <h5 class="mb-3">Master Thesis</h5>
+            <span class="fw-normal">Supporting the Semi-Automatic Creation of the Target Schema in Data Integration Systems</span><br>
+            <span class="fw-normal text-secondary">
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person"> <b>Kashif Rabbani</b></span>
+            </span><br>
+            <span class="fw-normal text-secondary">BDMA 2019</span><br>
+            <span class="fw-normal text-secondary">Supervisors: Prof. Dr. Oscar Romero (UPC), Prof. Dr. Volker Markl (TU-Berlin), and Dr. Ralf-Detlef Kutsche (on behalf of the BDMA steering board)</span>
+            <span class="fw-normal text-secondary">Advisors: Prof. Dr. Oscar Romero (UPC), Mr. Shumet Tadesse Nigatu (UPC), and Dr. Ralf-Detlef Kutsche (TU-Berlin)</span>
+            <div class="mt-2">
+                <a aria-expanded="false" class="btn btn-light btn-sm"
+                   href='https://www.researchgate.net/profile/Kashif-Rabbani-3/publication/359621337_Supporting_the_Semi-Automatic_Creation_of_the_Target_Schema_in_Data_Integration_Systems/links/6245a7fb21077329f2e4883a/Supporting-the-Semi-Automatic-Creation-of-the-Target-Schema-in-Data-Integration-Systems.pdf'
+                   role="button" target="_blank"><i
+                        class="fas fa-external-link-alt"> </i> Thesis PDF</a>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h4>Achievements, Awards, and Grants</h4>
+        <div class="awards-grid">
+            <div class="award-item">
+                <div class="award-title">
+                    <i class="fas fa-certificate me-2 text-success"></i>Award for Excellence in Software: Theory and Practice, IFIP TC2 Manfred Paul
+                </div>
+                <div class="award-description">
+                    Awarded to the paper entitled "Extraction of Validating Shapes from Very Large Knowledge Graphs".
+                </div>
+                <div class="mt-2">
+                    <a aria-expanded="false" class="btn btn-light btn-sm"
+                       href="awards/IFIP_TC2_Award.pdf"
+                       role="button" target="_blank"><i
+                            class="fas fa-certificate"> </i> Award Certificate</a>
+                </div>
+            </div>
+
+            <!-- <div class="award-item">
+                <div class="award-title">
+                    <i class="fas fa-plane me-2 text-primary"></i>PhD Study Abroad Travel Grants 2023
+                </div>
+                <div class="award-description">
+                    I was awarded travel grants by <strong>Otto Mønsted</strong> and <strong>Danish Data Science Academy</strong> for study abroad during my PhD studies.
+                </div>
+            </div> -->
+
+            <div class="award-item">
+                <div class="award-title">
+                    <i class="fas fa-trophy me-2 text-warning"></i>Big Data Talent Awards 2019 (Runner-up)
+                </div>
+                <div class="award-description">
+                    I was selected as a runner-up for <a class="text-decoration-none" href='https://www.fib.upc.edu/en/news/big-data-talent-awards-2019' target="_blank">Big Data Talent Awards 2019</a> at UPC Barcelona, Spain for my master thesis titled as "Dataspaces: Pay-As-you-go Data Integration".
+                </div>
+            </div>
+
+            <div class="award-item">
+                <div class="award-title">
+                    <i class="fas fa-graduation-cap me-2 text-success"></i>Erasmus Mundus Scholarship
+                </div>
+                <div class="award-description">
+                    I was awarded a fully funded scholarship for my master's degree in Big Data Management and Analytics (<a class="text-decoration-none" href='https://bdma.ulb.ac.be/' target="_blank">BDMA</a>).
+                </div>
+            </div>
+
+            <div class="award-item">
+                <div class="award-title">
+                    <i class="fas fa-medal me-2 text-warning"></i>Gold Medal - Bachelors in Computer Science (BSCS)
+                </div>
+                <div class="award-description">
+                    I won a campus Gold Medal award at <a class="text-decoration-none" href='https://www.comsats.edu.pk/' target="_blank">COMSATS University Islamabad, Pakistan</a> for the highest CGPA: 3.84/4.00 (Batch Spring 2013-17) of my Bachelor's degree in Computer Science (BSCS).
+                </div>
+            </div>
+
+            <div class="award-item">
+                <div class="award-title">
+                    <i class="fas fa-medal me-2 text-secondary"></i>Silver Medal - Bachelors in Computer Science (BSCS)
+                </div>
+                <div class="award-description">
+                    I won an institute Silver Medal award at <a class="text-decoration-none" href='https://www.comsats.edu.pk/' target="_blank">COMSATS University Islamabad, Pakistan</a> for the highest CGPA: 3.84/4.00 among all the institutes of COMSATS University for my Bachelor's degree in Computer Science (BSCS).
+                </div>
+            </div>
+
+            <div class="award-item">
+                <div class="award-title">
+                    <i class="fas fa-award me-2 text-info"></i>Open House Final Year Project Award (2nd Position)
+                </div>
+                <div class="award-description">
+                    I got 2nd position for my Final Year Project during my Bachelor's degree in Computer Science (BSCS) at COMSATS University, Islamabad, Pakistan.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Educational Activities</h3>
+        <p class="mb-4">
+            Kashif's educational activities focus on supervising and assisting multiple groups of computer science and software engineering students at bachelor's level at Aalborg University.
+        </p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="skills-category">
+                    <h5><i class="fas fa-chalkboard-teacher me-2"></i>Teaching & Supervision</h5>
+                    <div class="mb-3">
+                        <div class="award-item">
+                            <div class="award-title">
+                                <i class="fas fa-database me-2 text-primary"></i>Teaching Assistant - Database Management Systems
+                            </div>
+                            <div class="award-description">
+                                <strong>Duration:</strong> Fall 2020, Fall 2021, Fall 2022<br>
+                                <strong>Program:</strong> BSc Software Engineering<br>
+                                <strong>Department:</strong> Computer Science, Aalborg University
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="award-item">
+                            <div class="award-title">
+                                <i class="fas fa-users me-2 text-success"></i>Group Supervisor - Knox Project
+                            </div>
+                            <div class="award-description">
+                                <strong>Project:</strong> Knowledge Engineering Toolbox<br>
+                                <strong>Duration:</strong> Fall 2020, Fall 2021<br>
+                                <strong>Level:</strong> 5th Semester - BSc Software Engineering
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="award-item">
+                            <div class="award-title">
+                                <i class="fas fa-ship me-2 text-info"></i>Group Supervisor - AIS Data Analysis
+                            </div>
+                            <div class="award-description">
+                                <strong>Project:</strong> Large Scale Ships AIS Data Analysis<br>
+                                <strong>Duration:</strong> Spring 2021<br>
+                                <strong>Level:</strong> Final Semester - Bachelor's Project
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="skills-category">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>Academic Participation</h5>
+                    <div class="award-item">
+                        <div class="award-title">
+                            <i class="fas fa-calendar-alt me-2 text-warning"></i>Conference & Summer School Participation
+                        </div>
+                        <div class="award-description">
+                            Actively participates in various related conferences and summer/winter schools to stay current with research trends and methodologies.
+                        </div>
+                    </div>
+                    
+                    <div class="award-item mt-3">
+                        <div class="award-title">
+                            <i class="fas fa-presentation me-2 text-secondary"></i>eBISS 2022 - Research Presentation
+                        </div>
+                        <div class="award-description">
+                            Attended the <a class="text-decoration-none" href='https://cs.ulb.ac.be/conferences/ebiss2022/' target="_blank">Tenth European Big Data Management & Analytics Summer School (eBISS)</a> in 2022 and presented a poster about PhD research.
+                        </div>
+                        <div class="mt-2">
+                            <a aria-expanded="false" class="btn btn-light btn-sm"
+                               href='ebiss/poster-eBISS-2022.pdf'
+                               role="button" target="_blank"><i
+                                    class="fas fa-file-pdf"> </i> View Poster</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-        <li>
-            <p><span>Gold Medal - Bachelors in Computer Science (BSCS)</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">I won a campus Gold Medal award at <a class="text-decoration-none"
-                                                                                           href='https://www.comsats.edu.pk/'
-                                                                                           target="_blank"><span>COMSATS University Islamabad, Pakistan</span></a><span> for the highest CGPA: 3.84/4.00 (Batch Spring 2013-17) of my Bachelor's degree in Computer Science (BSCS).</span>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <p><span>Silver Medal - Bachelors in Computer Science (BSCS)</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">I won an institute Silver Medal award at <a
-                        class="text-decoration-none"
-                        href='https://www.comsats.edu.pk/'
-                        target="_blank"><span>COMSATS University Islamabad, Pakistan</span></a><span> for the highest CGPA: 3.84/4.00 among all the institutes of COMSATS University for my Bachelor's degree in Computer Science (BSCS).</span>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <p><span>Open House Final Year Project Award (2nd Position)</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">I got 2nd position for my Final Year Project during my Bachelor's
-                    degree in Computer Science (BSCS) at COMSATS University, Islamabad, Pakistan.
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <hr/>
-    <h4><a class="md-header-anchor" name="blog"></a><span>Blog Posts</span></h4>
-    <ul>
-        <li>
-            <p><span>Distributed GraphLab</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">Read it on <a class="text-decoration-none"
-                                                                   href='https://medium.com/@kashirabbani/distributed-graphlab-6e32d6780a1c'
-                                                                   target="_blank"><span>medium.com</span></a><span>, Published in 2020.</span>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <p><span>Data Streams Mining</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">Read it on <a class="text-decoration-none"
-                                                                   href='https://medium.com/swlh/data-streams-mining-c5012ff1b4c1'
-                                                                   target="_blank"><span>medium.com</span></a><span>, Published in 2020.</span>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <p><span>Metadata (Data about data)</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">Read it on <a class="text-decoration-none"
-                                                                   href='https://medium.com/@kashirabbani/metadata-data-about-data-b3bce53e71af'
-                                                                   target="_blank"><span>medium.com</span></a><span>, Published in 2020.</span>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <p><span>Dark Silicon (Toward Dark Silicon in Servers)</span></p>
-            <ul>
-                <li class="fw-normal text-secondary">Read it on <a class="text-decoration-none"
-                                                                   href='https://medium.com/@kashirabbani/dark-silicon-toward-dark-silicon-in-servers-c5dd17c3c2a'
-                                                                   target="_blank"><span>medium.com</span></a><span>, Published in
-                            2020.</span>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <hr/>
-    <h4><a class="md-header-anchor" name="sideprojects"></a><span>Side Projects</span></h4>
-    <ul>
-        <li>
-            <p><span>Kashif has published a few applications on </span> <a class="text-decoration-none"
-                                                                           href='https://apps.apple.com/pk/developer/kashif-rabbani/id1546545902'
-                                                                           target="_blank"><span>Apple App Store </span></a>,
-                and he is maintaining them as well.
-            </p>
-        </li>
-    </ul>
-    <hr/>
 
-    <h4><a class="md-header-anchor" name="sideprojects"></a><span>Resume</span></h4>
-    <p>Reach out ot me if you want to see my resume.</p>
-    <hr/>
+    <!-- <div class="section">
+        <h4>Blog Posts</h4>
+        <ul>
+            <li class="mb-3">
+                <p><span>Distributed GraphLab</span></p>
+                <ul>
+                    <li class="fw-normal text-secondary">Read it on <a class="text-decoration-none"
+                                                                       href='https://medium.com/@kashirabbani/distributed-graphlab-6e32d6780a1c'
+                                                                       target="_blank"><span>medium.com</span></a><span>, Published in 2020.</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-3">
+                <p><span>Data Streams Mining</span></p>
+                <ul>
+                    <li class="fw-normal text-secondary">Read it on <a class="text-decoration-none"
+                                                                       href='https://medium.com/swlh/data-streams-mining-c5012ff1b4c1'
+                                                                       target="_blank"><span>medium.com</span></a><span>, Published in 2020.</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-3">
+                <p><span>Metadata (Data about data)</span></p>
+                <ul>
+                    <li class="fw-normal text-secondary">Read it on <a class="text-decoration-none"
+                                                                       href='https://medium.com/@kashirabbani/metadata-data-about-data-b3bce53e71af'
+                                                                       target="_blank"><span>medium.com</span></a><span>, Published in 2020.</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-3">
+                <p><span>Dark Silicon (Toward Dark Silicon in Servers)</span></p>
+                <ul>
+                    <li class="fw-normal text-secondary">Read it on <a class="text-decoration-none"
+                                                                       href='https://medium.com/@kashirabbani/dark-silicon-toward-dark-silicon-in-servers-c5dd17c3c2a'
+                                                                       target="_blank"><span>medium.com</span></a><span>, Published in
+                                2020.</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div> -->
 
-    <p><em><span>Updated: April 2025</span></em></p>
-    <p>&nbsp;</p>
+    <div class="section">
+        <h4>iOS Development (Swift)</h4>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="award-item">
+                    <div class="award-title">
+                        <i class="fab fa-apple me-2 text-dark"></i>Mobile App Developer & Publisher
+                    </div>
+                    <div class="award-description">
+                        I have developed and published <strong>6 iOS applications</strong> using <strong>Swift</strong> on the Apple App Store. These apps demonstrate my mobile development skills and cover various domains including education and religious studies, showcasing my ability to create user-friendly mobile experiences.
+                    </div>
+                    <div class="mt-3">
+                        <a aria-expanded="false" class="btn btn-light btn-sm"
+                           href='https://apps.apple.com/pk/developer/kashif-rabbani/id1546545902'
+                           role="button" target="_blank">
+                            <i class="fab fa-app-store-ios me-1"></i> View Apps on App Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="skills-category">
+                    <h5><i class="fas fa-mobile-alt me-2"></i>Tech Stack</h5>
+                    <div class="skills-list">
+                        <strong>Language:</strong> Swift<br>
+                        <strong>Platform:</strong> iOS, iPadOS<br>
+                        <strong>IDE:</strong> Xcode<br>
+                        <strong>Apps Published:</strong> 6<br>
+                        <strong>Status:</strong> Active & Maintained
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="mt-3">
+            <div class="row">
+                <div class="col-12">
+                    <h6 class="mb-2"><i class="fas fa-list me-2"></i>Published Applications:</h6>
+                    <div class="skills-list">
+                        <ul class="mb-0">
+                            <li><strong>TafseerOne - 30 Urdu Tafaseer</strong> - Educational app for religious studies</li>
+                            <li><strong>Tafseer Ibn-e-Kaseer Urdu</strong> - Islamic educational content</li>
+                            <li><strong>Tafheem ul Quran Urdu</strong> - Quranic commentary application</li>
+                            <li><strong>Tafseer al Quran</strong> - Religious education and study tool</li>
+                            <li><strong>And 2 additional iOS applications</strong> - Available on the App Store</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="section">
+        <h4>Resume & Contact</h4>
+        <div class="award-item">
+            <div class="award-title">
+                <i class="fas fa-file-alt me-2 text-primary"></i>Resume & References Available
+            </div>
+            <div class="award-description">
+                For my detailed resume, references, or additional information about my work and research, please feel free to reach out to me directly.
+            </div>
+            <div class="mt-3">
+                <a href="mailto:ch.kashirabbani@gmail.com" class="btn btn-light btn-sm me-2">
+                    <i class="fas fa-envelope me-1"></i> ch.kashirabbani@gmail.com
+                </a>
+                <!-- <span class="text-muted small">
+                    <i class="fas fa-info-circle me-1"></i>Resume, references, and additional details available upon request
+                </span> -->
+            </div>
+        </div>
+    </div>
+
+    <p class="text-muted text-center mt-4"><em>Updated: July 2025</em></p>
 </div>
-</body>
-<script> window.$crisp = [];
-window.CRISP_WEBSITE_ID = "e0eba719-7475-4194-befb-28d625aaf417";
-(function () {
-    d = document;
-    s = d.createElement("script");
-    s.src = "https://client.crisp.chat/l.js";
-    s.async = 1;
-    d.getElementsByTagName("head")[0].appendChild(s);
-})();
+
+<script>
+function togglePublications() {
+    const hiddenPubs = document.querySelectorAll('.hidden-publications');
+    const toggleBtn = document.getElementById('togglePublications');
+    const icon = toggleBtn.querySelector('i');
+    
+    // Check if publications are currently hidden
+    const isHidden = hiddenPubs[0].style.display === 'none' || hiddenPubs[0].style.display === '';
+    
+    if (isHidden) {
+        // Show hidden publications
+        hiddenPubs.forEach(pub => {
+            pub.style.display = 'block';
+        });
+        toggleBtn.innerHTML = '<i class="fas fa-chevron-up me-2"></i>Show Less Publications';
+    } else {
+        // Hide publications
+        hiddenPubs.forEach(pub => {
+            pub.style.display = 'none';
+        });
+        toggleBtn.innerHTML = '<i class="fas fa-chevron-down me-2"></i>Show More Publications (5 more)';
+        
+        // Scroll back to publications section
+        document.querySelector('#togglePublications').scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        });
+    }
+}
+
+// Initially hide the publications
+document.addEventListener('DOMContentLoaded', function() {
+    const hiddenPubs = document.querySelectorAll('.hidden-publications');
+    hiddenPubs.forEach(pub => {
+        pub.style.display = 'none';
+    });
+});
 </script>
+
+<script>
+function toggleBio() {
+    const expandedBio = document.getElementById('expandedBio');
+    const readMoreText = document.getElementById('readMoreText');
+    const readMoreIcon = document.getElementById('readMoreIcon');
+    
+    if (expandedBio.style.display === 'none' || expandedBio.style.display === '') {
+        // Show expanded bio
+        expandedBio.style.display = 'block';
+        readMoreText.textContent = 'Read less';
+        readMoreIcon.className = 'fas fa-chevron-up';
+    } else {
+        // Hide expanded bio
+        expandedBio.style.display = 'none';
+        readMoreText.textContent = 'Read more';
+        readMoreIcon.className = 'fas fa-chevron-down';
+    }
+}
+
+// Initially hide the expanded bio
+document.addEventListener('DOMContentLoaded', function() {
+    const expandedBio = document.getElementById('expandedBio');
+    expandedBio.style.display = 'none';
+});
+</script>
+
+<!-- <script>
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "e0eba719-7475-4194-befb-28d625aaf417";
+    (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script> -->
+</body>
 </html>
