@@ -450,10 +450,11 @@
         .tooltip-content {
             visibility: hidden;
             opacity: 0;
-            position: absolute;
-            bottom: 125%;
+            position: fixed;
+            bottom: auto;
+            top: auto;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(-100%);
             background: var(--card-bg);
             color: var(--text-color);
             border: 1px solid var(--border-color);
@@ -463,9 +464,11 @@
             line-height: 1.4;
             white-space: pre-line;
             width: 300px;
+            max-width: 90vw;
             box-shadow: 0 4px 20px var(--shadow-color);
-            z-index: 1000;
+            z-index: 9999;
             transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none;
         }
 
         .tooltip-content::after {
@@ -477,8 +480,10 @@
             border-width: 5px;
             border-style: solid;
             border-color: var(--card-bg) transparent transparent transparent;
+            z-index: 10000;
         }
 
+        /* CSS hover states for fallback */
         .metric-info:hover .tooltip-content,
         .metric-info:focus .tooltip-content {
             visibility: visible;
@@ -1428,7 +1433,7 @@ Based on ingestion monitoring over a 3-month period. SHACL-based validation caug
         </div>
     </div>
 
-    <p class="text-muted text-center mt-4"><em>Updated: July 2025</em></p>
+    <p class="text-center mt-4"><em>Updated: July 2025</em></p>
 </div>
 
 <script>
@@ -1512,6 +1517,38 @@ if (window.matchMedia) {
 // Initialize theme when page loads
 document.addEventListener('DOMContentLoaded', function() {
     initializeTheme();
+    
+    // Setup tooltip positioning
+    const metricInfoElements = document.querySelectorAll('.metric-info');
+    
+    metricInfoElements.forEach(element => {
+        const tooltip = element.querySelector('.tooltip-content');
+        
+        element.addEventListener('mouseenter', function() {
+            if (tooltip) {
+                // Make tooltip visible first to get accurate measurements
+                tooltip.style.visibility = 'visible';
+                tooltip.style.opacity = '0';
+                
+                // Position the tooltip
+                positionTooltip(element, tooltip);
+                
+                // Fade in
+                setTimeout(() => {
+                    tooltip.style.opacity = '1';
+                }, 10);
+            }
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            if (tooltip) {
+                tooltip.style.opacity = '0';
+                setTimeout(() => {
+                    tooltip.style.visibility = 'hidden';
+                }, 300);
+            }
+        });
+    });
 });
 
 function togglePublications() {
@@ -1589,5 +1626,38 @@ document.addEventListener('DOMContentLoaded', function() {
         d.getElementsByTagName("head")[0].appendChild(s);
     })();
 </script> -->
+
+<script>
+// Dynamic Tooltip Positioning
+function positionTooltip(triggerElement, tooltip) {
+    const triggerRect = triggerElement.getBoundingClientRect();
+    const tooltipRect = tooltip.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    // Calculate initial position (above the trigger element)
+    let top = triggerRect.top - tooltipRect.height - 10;
+    let left = triggerRect.left + (triggerRect.width / 2) - (tooltipRect.width / 2);
+    
+    // Adjust if tooltip goes off the left edge
+    if (left < 10) {
+        left = 10;
+    }
+    
+    // Adjust if tooltip goes off the right edge
+    if (left + tooltipRect.width > viewportWidth - 10) {
+        left = viewportWidth - tooltipRect.width - 10;
+    }
+    
+    // If tooltip goes above viewport, position it below the trigger
+    if (top < 10) {
+        top = triggerRect.bottom + 10;
+    }
+    
+    tooltip.style.top = top + 'px';
+    tooltip.style.left = left + 'px';
+    tooltip.style.transform = 'none';
+}
+</script>
 </body>
 </html>
