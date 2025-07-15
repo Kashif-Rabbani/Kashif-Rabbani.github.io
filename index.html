@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='UTF-8'>
-    <meta content="Kashif Rabbani profile, a PhD researcher at Aalborg University, Denmark" name="description">
+    <meta content="Kashif Rabbani, Data Engineer with PhD in Computer Science" name="description">
     <meta content='width=device-width initial-scale=1' name='viewport'>
     <title>Kashif Rabbani</title>
     <link href="style.css" rel="stylesheet" type="text/css">
@@ -512,10 +512,10 @@
         <div class="profile-content">
             <img alt="Kashif Rabbani" class="profile-image-float" src="kashif-rabbani.jpg"/>
             <h1 class="h2 mb-2">Kashif Rabbani</h1>
-            <p class="mb-1 fw-medium">Semantic Data Engineer (Research Ontologist)</p>
+            <p class="mb-1 fw-medium">Computer Scientist -- Data Engineering & Science</p>
             <p class="mb-2">Novo Nordisk, Denmark</p>
             <!-- <p class="mb-3">PhD in Computer Science from Aalborg University, Denmark</p> -->
-            <div class="mb-3 text-justify">
+            <!-- <div class="mb-3 text-justify">
                 <p class="text-justify mb-3">
                     Kashif has a PhD in Computer Science and six years of experience working with knowledge-driven data solutions in both industry and research. His work focuses on semantic technologies and graph-based data modeling. He received his PhD from Aalborg University, Denmark, where he researched query optimization and data quality in RDF and Property Graphs.
                 </p>
@@ -540,7 +540,50 @@ Based on ingestion monitoring over a 3-month period. SHACL-based validation caug
                     <button id="readMoreBtn" class="btn btn-link p-0 text-decoration-none" onclick="toggleBio()">
                         <span id="readMoreText">Read more</span> <i id="readMoreIcon" class="fas fa-chevron-down"></i>
                     </button>
-                </div>
+                </div> -->
+                <div class="mb-3 text-justify">
+  <!-- ✨ Short blurb (always visible) -->
+  <p class="text-justify mb-3">
+    Kashif is a data & software engineer with a doctorate in Computer Science and 6+ years of experience delivering high-impact, data-driven solutions across research and industry. His work spans scalable data platforms, distributed processing, and modern graph-based modeling.
+  </p>
+
+  <!-- 🔽 Expandable details (hidden until “Read more”) -->
+  <div id="expandedBio" style="display:none;">
+    <p class="text-justify mb-3">
+      At <strong>Novo Nordisk</strong>, he designs and builds end-to-end data products—from ingestion pipelines and distributed processing to knowledge-graph modeling, vector search, and LLM-ready retrieval. Most recently, he led development of a hybrid search system that cut average query latency by
+      <span class="metric-info">~80%<i class="fas fa-info-circle info-icon"></i>
+        <span class="tooltip-content">
+          🔍 Approx. 80 % Query-Latency Improvement<br>
+          Measured on representative query patterns before vs. after rollout. Vector-based semantic filtering slashed graph-traversal depth and reduced average latency from ~3 s to ~0.6 s.
+        </span>
+      </span>.
+      He also boosted pipeline reliability by
+      <span class="metric-info">~45%<i class="fas fa-info-circle info-icon"></i>
+        <span class="tooltip-content">
+          🛡️ Approx. 45 % Fewer Ingestion Failures<br>
+          Continuous schema validation and data-quality checks cut monthly breakages nearly in half.
+        </span>
+      </span>.
+    </p>
+
+    <p class="text-justify mb-3">
+      Earlier, he worked in the Semantic & AI practice of a global IT-services firm and earned a European joint master’s in Big Data Management and Analytics, studying across Belgium, Spain, and Germany.
+    </p>
+
+    <p class="text-justify mb-3">
+      Colleagues value his blend of big-picture architectural thinking and hands-on coding, turning complex domain challenges into explainable, cost-efficient solutions grounded in robust data modeling and engineering best practices.
+    </p>
+  </div>
+
+  <!-- 🔘 Toggle button -->
+  <button id="readMoreBtn"
+          class="btn btn-link p-0 text-decoration-none"
+          onclick="toggleBio()">
+    <span id="readMoreText">Read more</span>
+    <i id="readMoreIcon" class="fas fa-chevron-down"></i>
+  </button>
+</div>
+
                 <div class="social-links">
                     <a class="btn btn-light" href="https://www.linkedin.com/in/kashifrabbani/" target="_blank">
                         <i class="fab fa-linkedin-in"></i> LinkedIn
