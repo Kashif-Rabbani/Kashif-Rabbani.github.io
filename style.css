@@ -804,81 +804,6 @@ section + section {
     margin-right: 0.6rem;
 }
 
-/* iOS card */
-
-.ios-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
-    align-items: start;
-    background: var(--bg-card);
-    border: 1px solid var(--card-border);
-    border-radius: 18px;
-    padding: 1.7rem 1.9rem;
-    box-shadow: var(--shadow);
-    max-width: 46rem;
-}
-
-.ios-card .badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 14px;
-    background: var(--chip-bg);
-    color: var(--accent);
-}
-
-.ios-card .badge svg {
-    width: 1.6rem;
-    height: 1.6rem;
-}
-
-.ios-card p {
-    font-size: 0.9rem;
-    color: var(--muted);
-}
-
-.ios-card strong {
-    color: var(--heading);
-    font-weight: 600;
-}
-
-.proj-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.4rem;
-    margin-top: 0.8rem;
-    font-size: 0.86rem;
-    font-weight: 600;
-}
-
-.proj-links a {
-    color: var(--accent);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.18s ease;
-}
-
-.proj-links a:hover {
-    border-bottom-color: var(--accent);
-}
-
-.ios-card .link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 0.7rem;
-    font-size: 0.86rem;
-    font-weight: 600;
-    color: var(--accent);
-}
-
-.ios-card .link:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
 /* collapsed activities */
 
 details.fold {
@@ -1195,10 +1120,6 @@ footer .credit {
 
     .sidebar h1 {
         font-size: 1.95rem;
-    }
-
-    .ios-card {
-        grid-template-columns: 1fr;
     }
 }
 
